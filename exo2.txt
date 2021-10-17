@@ -85,4 +85,99 @@
    85  ls*1
    86  ls *1
    87  ls *4*1
-   88  history>>exo2.txt
+   88  imssn@aimssn-02:~$ ls
+ Bureau      Images                          shell-lesson
+ Documents   intro_jupyternotebook.ipynb     simplestats
+ fichier2    Modèles                         snap
+ fichier3    Musique                         Téléchargements
+ fichier4   'Problem1 PSM-COUR1AIMS.ipynb'   Vidéos
+ fichier5    Public
+ fichier6    python-try
+aimssn@aimssn-02:~$ mkdir unix
+aimssn@aimssn-02:~$ ls
+ Bureau      Images                          shell-lesson
+ Documents   intro_jupyternotebook.ipynb     simplestats
+ fichier2    Modèles                         snap
+ fichier3    Musique                         Téléchargements
+ fichier4   'Problem1 PSM-COUR1AIMS.ipynb'   unix
+ fichier5    Public                          Vidéos
+ fichier6    python-try
+aimssn@aimssn-02:~$ cd unix
+aimssn@aimssn-02:~/unix$ touch foo.txt
+aimssn@aimssn-02:~/unix$ ls 
+foo.txt
+aimssn@aimssn-02:~/unix$ cp foo.txt foo-copy.txt
+aimssn@aimssn-02:~/unix$ ls
+foo-copy.txt  foo.txt
+aimssn@aimssn-02:~/unix$ mv foo.copy.txt foo2.txt
+mv: impossible d'évaluer 'foo.copy.txt': Aucun fichier ou dossier de ce type
+aimssn@aimssn-02:~/unix$ mv foo-copy.txt foo2.txt
+aimssn@aimssn-02:~/unix$ ls
+foo2.txt  foo.txt
+aimssn@aimssn-02:~/unix$ mkdir data
+aimssn@aimssn-02:~/unix$ ls
+data  foo2.txt  foo.txt
+aimssn@aimssn-02:~/unix$ mv foo2.txt data
+aimssn@aimssn-02:~/unix$ ls
+data  foo.txt
+aimssn@aimssn-02:~/unix$ mkdir new
+aimssn@aimssn-02:~/unix$ mv data/foo2 new
+mv: impossible d'évaluer 'data/foo2': Aucun fichier ou dossier de ce type
+aimssn@aimssn-02:~/unix$ mv foo2 new
+mv: impossible d'évaluer 'foo2': Aucun fichier ou dossier de ce type
+aimssn@aimssn-02:~/unix$ mv data/foo2.txt new
+aimssn@aimssn-02:~/unix$ mv foo2.txt unix
+mv: impossible d'évaluer 'foo2.txt': Aucun fichier ou dossier de ce type
+aimssn@aimssn-02:~/unix$ mv new/foo2.txt unix
+aimssn@aimssn-02:~/unix$ ls
+data  foo.txt  new  unix
+aimssn@aimssn-02:~/unix$ ls data
+aimssn@aimssn-02:~/unix$ tree data
+data
+
+0 directories, 0 files
+aimssn@aimssn-02:~/unix$ tree new
+new
+
+0 directories, 0 files
+aimssn@aimssn-02:~/unix$ tree unix
+unix [error opening dir]
+
+0 directories, 0 files
+aimssn@aimssn-02:~/unix$ mv unix foo-old.txt
+aimssn@aimssn-02:~/unix$ ls
+data  foo-old.txt  foo.txt  new
+aimssn@aimssn-02:~/unix$ rm foo-old.txt
+aimssn@aimssn-02:~/unix$ ls
+data  foo.txt  new
+aimssn@aimssn-02:~/unix$ rmdir new
+aimssn@aimssn-02:~/unix$ ls
+data  foo.txt
+aimssn@aimssn-02:~/unix$ history >> exo1.txt
+aimssn@aimssn-02:~/unix$ touch exo2.txt
+aimssn@aimssn-02:~/unix$ man ls
+aimssn@aimssn-02:~/unix$ ^C
+aimssn@aimssn-02:~/unix$ ls 
+data  exo1.txt  exo2.txt
+aimssn@aimssn-02:~/unix$ rm exo2.txt
+aimssn@aimssn-02:~/unix$ ls
+data  exo1.txt
+aimssn@aimssn-02:~/unix$ man ls
+aimssn@aimssn-02:~/unix$ ls-a
+ls-a : commande introuvable
+aimssn@aimssn-02:~/unix$ ls-R
+ls-R : commande introuvable
+aimssn@aimssn-02:~/unix$ sudo snap install ls-a
+[sudo] Mot de passe de aimssn : 
+erreur : snap "ls-a" non trouvé
+aimssn@aimssn-02:~/unix$ help ls
+bash: help: Aucune rubrique d'aide ne correspond à « ls ». Essayez « help help », « man -k ls » ou « info ls ».
+aimssn@aimssn-02:~/unix$ wc
+
+
+  
+
+
+  
+
+
